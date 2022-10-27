@@ -4866,20 +4866,20 @@ definitions:
     properties:
       Document Type:
         type: string
-        example: When creating a document in the system, the user can optionally select the type of record that is being uploaded.
+        
         enum: [Application Form,Attributes,Drawings and Sketches,Contract Declaration / Notice of Completion Engineer's Report,Letter of Assurance,Verification Report,Flow Test / Material Test,Bylaw Notice,Order External Info,
                Enquiry,Internal Memo,Refund]
       Description:
         type: string
         maxLength: 4000
-        example: When uploading a document, the user may enter a description of the document, using this field.
+        
       Upload File:
         type: string
-        example: When uploading a file, the user must select the type of document file they wish to upload.
+        
         enum: [doc,docx,gif,jpeg,jpg,msg,pdf,png,rtf,tif,tiff,txt,xls,xlsx]
       Locked:
         type: boolean
-        example: When set, the Locked flag will prevent the file from being removed or updated in the system.
+        
 
   o_CR_Entryway:
     required:
