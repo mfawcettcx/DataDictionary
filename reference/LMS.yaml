@@ -4411,9 +4411,7 @@ definitions:
       Floor:        
         type: string
         description: Allows the user to specify which floor of the building the Occupancy is for.
-        enum: 
-          - '1'
-          - '2'
+        enum: ['1','2',
           - '3'
           - '4'
           - '5'
@@ -4434,7 +4432,7 @@ definitions:
           - "20"          
           - Basement
           - Garage
-          - House
+          - House]
       Heated:
         description: Allows the user to specify if the Occupancy will have heat or not.
         type: string
