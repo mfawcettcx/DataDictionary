@@ -4411,7 +4411,9 @@ definitions:
       Floor:        
         type: string
         description: Allows the user to specify which floor of the building the Occupancy is for.
-        enum: ['1','2',
+        enum: 
+          - '1'
+          - '2'
           - '3'
           - '4'
           - '5'
@@ -8445,8 +8447,7 @@ definitions:
         maxLength: 10  
       Name:
         description: Used to record the Name of the Power Utility.  This is the value that will appear in the drop down list.
-        type: string
-        description: The name of the Power Utility that was selected
+        type: string        
       XferGuid:
         description: System field used by ADIEU, DO NOT USE FOR REPORTING
         type: string
