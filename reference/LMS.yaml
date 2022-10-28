@@ -21,7 +21,7 @@ info:
 definitions:
 
   j_BondEscrow:
-    description: The LMS Bonds and Escrow job. Used to establish surety for approved work. Includes approvals for additions, releases, and tracks residual value.
+    description: The LMS Bonds and Escrow job. Used to establish surety for approved work. Includes approvals for additions, releases, and tracks residual value.  
     required:  
       - Expiration/Completion/Performance Date
       - Type
@@ -37,13 +37,12 @@ definitions:
       Bank/Surety Address:
         description: The mailing address of the Bank or Surety Institution that has granted the Bond to the Applicant.
         type: string
-        maxLength:   4000
-        size: 4000
-      Bond/Escrow Expiration Date:
+        maxLength:   4000        
+      Bond/Escrow Expiration Date:        
         description: The date that the Bond or Escrow Account will expire on.
         type: string
         format: date
-      Comments: 
+      Comments:         
         description: Any comments entered by staff when setting up the Bond/Escrow Account.
         type: string 
         maxLength:   4000
