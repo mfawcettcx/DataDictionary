@@ -1,6 +1,5 @@
 # Added by API Auto Mocking Plugin
-host: virtserver.swaggerhub.com
-basePath: /mark.fawcett/Permits/1.0.0
+basePath: /studio/datadictionary?
 schemes:
  - https
  
@@ -11,6 +10,8 @@ info:
   title: LMS Data Model
   # put the contact info for your development or API team
   contact:
+    name: LMS Data Dictionary
+    url: https://computronix.stoplight.io/studio/datadictionary?
     email: mark.fawcett@computronix.com
 
   license:
@@ -6406,11 +6407,11 @@ definitions:
     description: Administrable list of equipment types as used in electrical, mechanical and plumbing equipment lists.
     properties:
       Active: 
-        description: When set to Yes, this field indicates that the equipment type record can be used in the system.
         type: boolean
-      Descriptions:
-        descripton: Used to record a description of the eqiupment type itself.  This is the value that appears in the drop down list. 
+        description: When set to Yes, this field indicates that the equipment type record can be used in the system.
+      Description:        
         type: string
+        description: Used to record a description of the eqiupment type itself.  This is the value that appears in the drop down list. 
         maxLength: 100
       Trade Type:
         description: Used to record what trade type the equipment type is for.  This field controls which trade permit type the equipment type will appear on.
