@@ -38,6 +38,7 @@ definitions:
         description: The mailing address of the Bank or Surety Institution that has granted the Bond to the Applicant.
         type: string
         maxLength:   4000
+        size: 4000
       Bond/Escrow Expiration Date:
         description: The date that the Bond or Escrow Account will expire on.
         type: string
