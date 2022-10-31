@@ -142,6 +142,7 @@ definitions:
         Amount: 0
     x-internal: false
   j_BuildingPermit:
+    type: object
     description: This is the base job for all building permits. Permit Name establishes the "Permit" as seen by users.
     required:
       - Development Application
@@ -464,6 +465,7 @@ definitions:
         type: number
         format: '14,0'
   j_GeneralPermit:
+    type: object
     description: This is the base job for all general permits. Permit Name establishes the "Permit" as seen by users.
     required:
       - Development Application
