@@ -2062,7 +2062,9 @@ definitions:
           - 'B: Refrigeration'
           - 'C: Portable Stationary'
           - 'D: Fireman'
+
   j_BL_BatchNotification:
+    type: object
     description: Batch notification jobs are used to identify a set of notifications sent out together.
     properties:
       Number of Notifications:
