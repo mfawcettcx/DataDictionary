@@ -15,6 +15,7 @@ info:
     url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
 definitions:
   j_BondEscrow:
+    type: object
     description: 'The LMS Bonds and Escrow job. Used to establish surety for approved work. Includes approvals for additions, releases, and tracks residual value.'
     required:
       - Expiration/Completion/Performance Date
