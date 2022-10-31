@@ -25,6 +25,7 @@ definitions:
       Fee Display:
         $ref: '#/definitions/o_FN_FeeDisplay'
       Bank/Surety Name:
+        title: Test
         description: The name of the Bank or Surety Institution that has granted the Bond to the Applicant.
         type: string
         maxLength: 4000
