@@ -33,7 +33,8 @@ definitions:
         type: string
         maxLength: 4000
         properties:
-          field name:            
+          field name:  
+            type: string          
             description: this is a test
       Bond/Escrow Expiration Date:
         description: The date that the Bond or Escrow Account will expire on.               
