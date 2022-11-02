@@ -1109,6 +1109,7 @@ definitions:
       Work Type Object Id:
         $ref: '#/definitions/o_PI_WorkType'
   j_BL_Amendment:
+    type: object
     description: Business License Amendment Job
     required:
       - Application Received Date
@@ -1716,6 +1717,8 @@ definitions:
         description: 'System Infrastructure field, DO NOT USE FOR REPORTING'
         type: boolean
   j_BL_Application:
+    type: object
+    description: Business License Application Job
     properties:
       Residential or Commercial:
         type: string
@@ -2070,6 +2073,7 @@ definitions:
       Number of Notifications:
         $ref: '#/definitions/d_StoredReport'
   j_BL_Closure:
+    type: object
     description: Business License Closure Job
     required:
       - Reason For Closure
@@ -2096,6 +2100,7 @@ definitions:
       Fee Display:
         $ref: '#/definitions/o_FN_FeeDisplay'
   j_BL_Enforcement:
+    type: object
     description: Business License Enforcement Job - Enforcement Type - Reason for Enforcement
     properties:
       Fee Display:
@@ -2127,6 +2132,7 @@ definitions:
       Business (IND):
         $ref: '#/definitions/o_BL_Business'
   j_BL_Inspection:
+    type: object
     description: Business License Inspection Job
     required:
       - Inspector
@@ -2168,6 +2174,7 @@ definitions:
       Business License Renewal:
         $ref: '#/definitions/j_BL_Renewal'
   j_BL_Reinstatement:
+    type: object
     description: Business License Reinstatement Job
     required:
       - Reason for Reinstatement
@@ -2204,6 +2211,7 @@ definitions:
       Application Guidance List Items (PROC):
         $ref: '#/definitions/o_CP_ApplicationGuidanceList'
   j_BL_Renewal:
+    type: object
     description: Business License Renewal Job
     required:
       - Application Received Date
@@ -2269,6 +2277,7 @@ definitions:
       Save Review Selections:
         type: boolean
   j_CE_Enforcement:
+    type: object
     required:
       - Enforcement Type
     properties:
@@ -2301,6 +2310,7 @@ definitions:
       Parcel:
         $ref: '#/definitions/o_CR_Parcel'
   j_CE_ProgramInspection:
+    type: object
     description: Program Inspection Job
     required:
       - Program Inspection Type
@@ -2328,6 +2338,7 @@ definitions:
       Parcel (IND):
         $ref: '#/definitions/o_CR_Parcel'
   j_CE_WorkOrder:
+    type: object
     description: 'Work Order Job, issued as part of the work to remediate a Case File'
     required:
       - Work Order Type
@@ -2377,6 +2388,7 @@ definitions:
       Shadow:
         $ref: '#/definitions/o_CP_ShadowJob'
   j_CR_MergeContractor:
+    type: object
     description: This is a job that merges two contractors into a single contractor. Typically used to correct the creation of a second (duplicate) contractor.
     required:
       - Superseded Contractor
@@ -2391,6 +2403,7 @@ definitions:
       Contractor To Merge Into:
         $ref: '#/definitions/o_Contractor'
   j_CR_MergeCustomer:
+    type: object
     description: This is a job that merges two customers into a single customer. Typically used to correct the creation of a second (duplicate) customer.
     required:
       - Superseded Customer
@@ -2405,6 +2418,7 @@ definitions:
       Customer To Merge Into:
         $ref: '#/definitions/o_CR_Customer'
   j_ER_Referral:
+    type: object
     description: This is a Referral Job used to gather input on a Planning Approval.
     required:
       - Mandatory Reminder Days
@@ -2478,6 +2492,7 @@ definitions:
       ER Optional Referral Requests (PROC):
         $ref: '#/definitions/p_ER_ReferralRequest'
   j_ER_ReferralResponse:
+    type: object
     description: This is a job prepared by a Responder when responding to a Referral.
     required:
       - Recommendation
@@ -2499,6 +2514,7 @@ definitions:
         type: string
         maxLength: 4000
   j_FN_AdjustPayment:
+    type: object
     description: This is a Common Finance payment adjustment job.
     required:
       - Reason
@@ -2526,6 +2542,7 @@ definitions:
         type: number
         maxLength: 14
   j_FN_AttemptPayment:
+    type: object
     description: This is a Common Finance payment job. (It is "attempted" becuase there is the possibility that it may fail.)
     properties:
       Payment Date:
@@ -2563,12 +2580,16 @@ definitions:
         $ref: '#/definitions/o_FN_PaymentMethod'
       Auth PrepPay XRef:
         $ref: '#/definitions/o_FN_AuthPrePaymentXref'
+
   j_FN_CreateInvoiceReport:
+    type: object
     description: TBD
     properties:
       Invoice:
         $ref: '#/definitions/o_FN_Invoice'
-  j_FN_DailyClose:
+
+  j_FN_DailyClose:    
+    type: object
     description: This job gathers all the payments received in a Cash Handling Area and provides details to support end-of-period reconciliation of cash to payments received.
     required:
       - Balance Date
@@ -2584,7 +2605,9 @@ definitions:
         $ref: '#/definitions/o_FN_Payment'
       Process:
         $ref: '#/definitions/p_FN_PerformDailyClose'
+
   j_FN_PrintDocumentBatch:
+    type: object
     description: TBD
     properties:
       Module:
@@ -2593,7 +2616,9 @@ definitions:
         $ref: '#/definitions/o_FN_BatchPrintType'
       Documents Assembled:
         $ref: '#/definitions/d_StoredReport'
+
   j_LMS_CaseFile:
+    type: object    
     description: This is the LMS Case File Job.
     required:
       - Brief Description
@@ -2646,7 +2671,9 @@ definitions:
         $ref: '#/definitions/u_Users'
       Complaint:
         $ref: '#/definitions/j_LMS_Complaint'
+ 
   j_LMS_Complaint:
+    type: object
     description: This is the LMS Complaint Job
     required:
       - Complaint Description
@@ -2713,7 +2740,9 @@ definitions:
         maxLength: 10
       Complaint Type:
         $ref: '#/definitions/o_CE_ComplaintType'
+        
   j_PI_ElectricalPermit:
+    type: object
     description: This is the base job for all electrical permits. Permit Name establishes the "Permit" as seen by users.
     required:
       - Primary Work Scope
