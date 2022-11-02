@@ -14,8 +14,9 @@ info:
     name: Apache 2.0
     url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
 definitions:
-  j_BondEscrow:
+  j_BondEscrow:    
     type: object
+    title: j_BondEscrow
     description: 'The LMS Bonds and Escrow job. Used to establish surety for approved work. Includes approvals for additions, releases, and tracks residual value.'
     required:
       - Expiration/Completion/Performance Date
@@ -25,8 +26,7 @@ definitions:
     properties:
       Fee Display:
         $ref: '#/definitions/o_FN_FeeDisplay'
-      Bank/Surety Name:
-        title: Test
+      Bank/Surety Name:        
         description: The name of the Bank or Surety Institution that has granted the Bond to the Applicant.
         type: string
         maxLength: 4000
@@ -143,6 +143,7 @@ definitions:
     x-internal: false
   j_BuildingPermit:
     type: object
+    title: j_BuildingPermit
     description: This is the base job for all building permits. Permit Name establishes the "Permit" as seen by users.
     required:
       - Development Application
@@ -2933,6 +2934,7 @@ definitions:
         type: string
         maxLength: 300
   j_PI_MechanicalPermit:
+    type: object
     description: This is the base job for all mechanical permits. Permit Name establishes the "Permit" as seen by users.
     required:
       - Work Type
@@ -3129,6 +3131,7 @@ definitions:
         type: number
         format: '14,0'
   j_PI_PlumbingPermit:
+    type: object
     description: This is the base job for all plumbing permits. Permit Name establishes the "Permit" as seen by users.
     required:
       - Power Utility
@@ -3324,6 +3327,7 @@ definitions:
       New Permit Type:
         $ref: '#/definitions/o_GeneralPermitType'
   j_PL_AddressChangeRequest:
+    type: object
     description: This is the "Address Change Request" job.
     required:
       - Posession Date
@@ -3397,12 +3401,14 @@ definitions:
       Application Guidance List Items (Proc):
         $ref: '#/definitions/o_CP_ApplicationGuidanceList'
   j_PL_BatchNotification:
+    type: object
     description: 'This job is used to notify a set of property owners, as part of the workflow of a Planning Approval.'
     properties:
       Batch Date:
         type: string
         format: date
   j_PL_DevelopmentApproval:
+    type: object
     description: This is a planning approval which may be linked to a building or general permit.
     required:
       - Applicant
@@ -3548,6 +3554,7 @@ definitions:
       ePlans Job Review Xref:
         $ref: '#/definitions/o_ePlansJobReviewXref'
   j_PL_DevelopmentPermit:
+    type: object
     description: This is a permit (although it is a planning job) which may be linked to a building or general permit.
     required:
       - Primary Work Scope
@@ -3759,6 +3766,7 @@ definitions:
       Job Type Permit Name:
         $ref: '#/definitions/o_PI_PermitName'
   j_PL_LongRangePlan:
+    type: object
     description: This is a staff-initiated planning job which typically results in a comprehensive plan for the jurisdiction.
     required:
       - Display Address
@@ -3876,6 +3884,7 @@ definitions:
         type: string
         maxLength: 4000
   j_PL_PlanningApproval:
+    type: object
     description: This is the base job for planning approvals. Application Name establishes the "Planning Application" as seen by users.
     required:
       - Use Designation
@@ -4015,6 +4024,7 @@ definitions:
       Applicant Professional/Contractor (IND):
         $ref: '#/definitions/o_Contractor'
   j_PL_Presubmittal:
+    type: object
     required:
       - Description of Proposed Activity
       - Applicant
@@ -4156,6 +4166,7 @@ definitions:
       Completeness Check (PROC):
         $ref: '#/definitions/p_PL_CompletenessCheck'
   j_MeetingItem:
+    type: object
     description: 'This is the Meeting Item Job, used by Planning and Code Enforcement. Meeting Items are also used in a ''standalone'' format.'
     required:
       - Earliest Date
@@ -4203,6 +4214,7 @@ definitions:
       Agenda Type:
         $ref: '#/definitions/o_AgendaType'
   j_MeetingAgenda:
+    type: object
     description: Meeting Agenda for scheduling Meeting Items
     required:
       - Meeting Date
@@ -4249,6 +4261,7 @@ definitions:
         type: string
         maxLength: 255
   j_MasterProject:
+    type: object
     description: The "Project" to which a permit or planning approval belongs (if any).
     properties:
       Job Contact Interface:
@@ -4276,6 +4289,7 @@ definitions:
       Responsible Party:
         $ref: '#/definitions/o_FN_ResponsibleParty'
   d_BuildingPermitDocument:
+    type: object
     description: This is the printed building permit document which is typically posted in a conspicuous spot on the construction site.
     properties:
       House Number:
@@ -4324,6 +4338,7 @@ definitions:
         type: string
         maxLength: 35
   d_CP_ApplicantDocument:
+    type: object
     description: This is the object that stores documents uploaded to an application by a customer/applicant.
     properties:
       d_CP_ApplicantDocument:
@@ -4334,6 +4349,7 @@ definitions:
           - Provided
           - Superseded
   d_CP_SampleDocuments:
+    type: object
     description: 'When present, this provides a sample document for inspection by customers/applicants.'
     properties:
       Created By:
@@ -4349,6 +4365,7 @@ definitions:
         type: string
         maxLength: 4000
   d_CP_WhereAmI:
+    type: object
     description: 'This is a picture that, when uploaded, shows the relative position of the current process in the overall workflow.'
     properties:
       Created By:
@@ -4373,6 +4390,7 @@ definitions:
         type: string
         maxLength: 60
   d_DevelopmentPermitDocument:
+    type: object
     description: This is the printed Development Permit document.
     properties:
       House Number:
@@ -4421,6 +4439,7 @@ definitions:
         type: string
         maxLength: 35
   d_ElectronicDocument:
+    type: object
     description: This is an internal LMS document type.
     properties:
       STUBBED:
@@ -4431,12 +4450,14 @@ definitions:
           - Notes
           - Statement
   d_EP_ReviewFeedback:
+    type: object
     description: Comments made by plans examiners that are provided to the applicant.
     properties:
       Description:
         type: string
         maxLength: 4000
   d_GeneralPermitDocument:
+    type: object
     description: This is the printed General Permit document.
     properties:
       House Number:
@@ -4485,6 +4506,7 @@ definitions:
         type: string
         maxLength: 35
   d_StoredReport:
+    type: object
     properties:
       Description:
         type: string
@@ -4496,6 +4518,7 @@ definitions:
         type: number
         format: '9,0'
   d_TradePermitDocument:
+    type: object
     description: 'This is the printed Electrical, Mechanical, or Plumbing Permit document.'
     properties:
       House Number:
@@ -4544,6 +4567,7 @@ definitions:
         type: string
         maxLength: 35
   d_WebImage:
+    type: object
     description: TBD
     properties:
       STUBBED:
@@ -4552,12 +4576,14 @@ definitions:
           - find
           - this
   i_JobContact:
+    type: object
     description: TBD
     properties:
       Host Object ID:
         type: number
         format: '9,0'
   o_AccessGroup:
+    type: object
     description: TBD
     properties:
       Is Adminstratable?:
@@ -4567,6 +4593,7 @@ definitions:
         description: TBD
         type: boolean
   o_AgendaType:
+    type: object
     description: TBD
     properties:
       Active:
@@ -4577,6 +4604,7 @@ definitions:
         type: string
         maxLength: 100
   o_Property:
+    type: object
     description: TBD
     properties:
       Number of Parcels:
@@ -4599,6 +4627,7 @@ definitions:
       Total Acres:
         $ref: '#/definitions/o_CR_Parcel'
   o_BL_InspectionType:
+    type: object
     description: Business License Inspection Type
     properties:
       Description:
@@ -4606,6 +4635,7 @@ definitions:
         type: string
         maxLength: 80
   o_BL_Business:
+    type: object
     description: The business to be licensed.
     properties:
       Access Group:
@@ -4708,6 +4738,7 @@ definitions:
       Primary Phone Number:
         $ref: '#/definitions/o_CR_PhoneNumber'
   o_BL_LegalEntity:
+    type: object
     description: Legal entities form the structure of ownership of a business.
     required:
       - Contact Name
@@ -4803,6 +4834,7 @@ definitions:
       License (IND):
         $ref: '#/definitions/o_BL_License'
   o_BL_LegalEntityType:
+    type: object
     description: Administrable list of Legal Entity types.
     properties:
       Is Individual Type?:
@@ -4820,7 +4852,8 @@ definitions:
         type: string
         maxLength: 50
   o_BL_License:
-    description: 'A business license, issued to a business.'
+    type: object
+    description: A business license, issued to a business.
     properties:
       Access Group (IND):
         $ref: '#/definitions/o_AccessGroup'
@@ -4994,6 +5027,7 @@ definitions:
           - Bingo
           - Raffle
   o_BL_LicenseType:
+    type: object
     description: An administrable list of Business License types.
     properties:
       Expiration Term Number:
@@ -5083,6 +5117,7 @@ definitions:
         description: 'When set, LMS will require the user to specify a Start and End Date for the event, and will not allow the License to be renewewd.'
         type: boolean
   o_BL_LicenseTypeCategory:
+    type: object
     description: An administrable list of Business License type categories.
     properties:
       Description:
@@ -5101,6 +5136,7 @@ definitions:
         type: integer
         maxLength: 9
   o_BL_Location:
+    type: object
     description: The location of a licensed business activity.
     properties:
       Geometry:
@@ -5116,6 +5152,7 @@ definitions:
         type: string
         maxLength: 4000
   o_BL_NAICSCode:
+    type: object
     description: The North American Industry Classification System Code
     properties:
       Title:
@@ -5127,6 +5164,7 @@ definitions:
         type: string
         maxLength: 6
   o_BL_ReviewType:
+    type: object
     description: An administrable list of Review Types used to review and adjudicate applications for business licenses.
     properties:
       Code:
@@ -5141,6 +5179,7 @@ definitions:
         type: string
         maxLength: 4000
   o_BL_Stakeholder:
+    type: object
     description: A person or entity that is part of the controlling management group of a Legal Entity.
     properties:
       Name:
@@ -5168,6 +5207,7 @@ definitions:
           - Unknown
           - Vice-President
   o_Building:
+    type: object
     description: An object that represents a building in the jurisdiction.
     properties:
       Name:
@@ -5194,6 +5234,7 @@ definitions:
       Current Address:
         $ref: '#/definitions/o_CR_Address'
   o_BuildingOccupancy:
+    type: object
     description: 'Standard building occupancy classifications, typically as set out by the ICC.'
     required:
       - Occupancy Type
@@ -5294,6 +5335,7 @@ definitions:
         type: number
         format: '10,0'
   o_CE_CaseFileType:
+    type: object
     description: An administrable list of Case File types
     properties:
       Active?:
@@ -5316,6 +5358,7 @@ definitions:
         description: 'System Infrastructure field, DO NOT USE FOR REPORTING'
         type: boolean
   o_CE_ComplaintType:
+    type: object
     description: An administrable list of Complaint Types
     properties:
       Active:
@@ -5338,6 +5381,7 @@ definitions:
         description: The role that will be assigned to review a complaint created with the Complaint Type.
         type: string
   o_CE_ContractorInvoiceXref:
+    type: object
     description: TBD
     properties:
       Generate Report Summary Process:
@@ -5345,6 +5389,7 @@ definitions:
       Contractor:
         $ref: '#/definitions/o_Contractor'
   o_CE_Crew:
+    type: object
     description: A Crew of workers.
     required:
       - Crew Name
@@ -5372,6 +5417,7 @@ definitions:
       Worker:
         $ref: '#/definitions/o_CE_Worker'
   o_CE_CrewType:
+    type: object
     description: An administrable list of crew types.
     properties:
       Active?:
@@ -5397,6 +5443,7 @@ definitions:
         type: string
         maxLength: 9
   o_CE_DefChecklistAction:
+    type: object
     description: TBD
     properties:
       Action Type:
@@ -5404,6 +5451,7 @@ definitions:
       Checklist Item:
         $ref: '#/definitions/o_CE_DefChecklistItem'
   o_CE_DefChecklistActionType:
+    type: object
     description: TBD
     properties:
       Active?:
@@ -5427,6 +5475,7 @@ definitions:
         type: number
         maxLength: 9
   o_CE_DefChecklistGroupType:
+    type: object
     description: TBD
     properties:
       Active?:
@@ -5445,6 +5494,7 @@ definitions:
         type: string
         maxLength: 4000
   o_CE_DefChecklistItem:
+    type: object
     description: TBD
     required:
       - Deficiency Found
@@ -5494,6 +5544,7 @@ definitions:
         description: TBD
         type: boolean
   o_CE_DefChecklistItemType:
+    type: object
     description: TBD
     properties:
       Reporting Name:
@@ -5518,6 +5569,7 @@ definitions:
       Active?:
         type: boolean
   o_CE_EnforcementType:
+    type: object
     description: An administrable list of Enforcement Types
     properties:
       Active:
@@ -5528,6 +5580,7 @@ definitions:
         type: string
         maxLength: 200
   o_CE_Equipment:
+    type: object
     description: Administrable list of equipment items used as part of a work order.
     required:
       - Equipment Type
@@ -5545,6 +5598,7 @@ definitions:
         type: string
         maxLength: 4000
   o_CE_EquipmentType:
+    type: object
     description: Administrable list of equipment item types.
     properties:
       Active?:
@@ -5574,6 +5628,7 @@ definitions:
         type: number
         format: '9,0'
   o_CE_InspectionScheduleXref:
+    type: object
     description: TBD
     properties:
       Next Inspection Date:
@@ -5585,6 +5640,7 @@ definitions:
       Program Inspection Type:
         $ref: '#/definitions/o_CE_ProgramInspectionType'
   o_CE_Materials:
+    type: object
     description: Administrable list of material items used as part of a work order.
     required:
       - Description
@@ -5600,6 +5656,7 @@ definitions:
       Material Type:
         $ref: '#/definitions/o_CE_MaterialType'
   o_CE_MaterialType:
+    type: object
     description: Administrable list of material item types.
     properties:
       Active?:
@@ -5621,6 +5678,7 @@ definitions:
         type: number
         format: '9,0'
   o_CE_Notice:
+    type: object
     description: Legal written notice prepared for delivery as part of a case file.
     properties:
       Responsible Party:
@@ -5628,6 +5686,7 @@ definitions:
       Send Notification:
         $ref: '#/definitions/p_LMS_SendNotification'
   o_CE_ProgramInspectionLocation:
+    type: object
     description: The location of a program inspection.
     required:
       - Location
@@ -5690,6 +5749,7 @@ definitions:
       Supervisor Name Search:
         $ref: '#/definitions/u_Users'
   o_CE_ProgramInspectionType:
+    type: object
     description: An administrable list of program inspection types.
     properties:
       Active?:
@@ -5715,6 +5775,7 @@ definitions:
         description: 'System Infrastructure field, DO NOT USE FOR REPORTING'
         type: boolean
   o_CE_ProgramInspectRecord:
+    type: object
     description: TBD
     required:
       - Location
@@ -5757,6 +5818,7 @@ definitions:
       Response Required:
         $ref: '#/definitions/o_CE_ProgramInspectRecordType'
   o_CE_ProgramInspectRecordType:
+    type: object
     description: TBD
     properties:
       Active?:
@@ -5779,6 +5841,7 @@ definitions:
         description: 'System field used by ADIEU, DO NOT USE FOR REPORTING'
         maxLength: 9
   o_CE_Rate:
+    type: object
     description: An administrable list of worker rates for use in costing work orders.
     properties:
       Worker:
@@ -5786,6 +5849,7 @@ definitions:
       Worker Role Type:
         $ref: '#/definitions/o_CE_WorkerRoleType'
   o_CE_ResponsibleParty:
+    type: object
     description: The responsible party identified as part of a Case File.
     properties:
       Business:
@@ -5803,6 +5867,7 @@ definitions:
       Person:
         $ref: '#/definitions/o_LMS_Person'
   o_CE_TimeEquipmentXref:
+    type: object
     description: TBD
     properties:
       Equipment:
@@ -5814,6 +5879,7 @@ definitions:
       Supervise Contractor Process:
         $ref: '#/definitions/p_WO_SuperviseContractor'
   o_CE_TimeWorkerXref:
+    type: object
     description: TBD
     properties:
       Perform Work:
@@ -5823,6 +5889,7 @@ definitions:
       Worker:
         $ref: '#/definitions/o_CE_Worker'
   o_CE_UnitsMaterialXref:
+    type: object
     description: TBD
     properties:
       Materials:
@@ -5834,6 +5901,7 @@ definitions:
       Work Order Summary:
         $ref: '#/definitions/p_WO_GenerateWorkSummary'
   o_CE_ViolationRecord:
+    type: object
     description: The record of a violation found as part of a Case File.
     properties:
       Meeting Complete:
@@ -5847,6 +5915,7 @@ definitions:
       Violation:
         $ref: '#/definitions/o_Violations'
   o_CE_ViolationResolutionType:
+    type: object
     description: The record of the resoluton of a violation found as part of a Case File.
     properties:
       Description:
@@ -5864,6 +5933,7 @@ definitions:
           - Ticketed
           - Warned
   o_CE_Worker:
+    type: object
     description: A worker associated with a Crew.
     properties:
       Active:
@@ -5872,6 +5942,7 @@ definitions:
       Crew:
         $ref: '#/definitions/o_CE_Crew'
   o_CE_WorkerRoleType:
+    type: object
     description: Administrable list of Worker's role on a crew
     properties:
       Active:
@@ -5897,6 +5968,7 @@ definitions:
         type: number
         maxLength: 9
   o_CE_WorkOrderType:
+    type: object
     description: Administrable list of Work Order types.
     properties:
       Active?:
@@ -5919,6 +5991,7 @@ definitions:
         type: number
         format: '9,0'
   o_CP_ApplicationGuidanceList:
+    type: object
     description: A collection of textual instructions displayed as part of various applications in the Customer Portal.
     properties:
       Description:
@@ -5937,6 +6010,7 @@ definitions:
         type: number
         format: '9,0'
   o_CP_DocumentChecklistItem:
+    type: object
     description: TBD
     properties:
       Required:
@@ -5947,6 +6021,7 @@ definitions:
         type: number
         maxLength: 2
   o_CP_DocumentType:
+    type: object
     description: LMS document types
     properties:
       Active?:
@@ -5975,6 +6050,7 @@ definitions:
         type: number
         maxLength: 9
   o_CP_MailingAddress:
+    type: object
     description: 'A formatted mailing address, not necessarily found within the jurisdiction''s boundaries.'
     required:
       - RR Rural Route Identifier
@@ -6140,6 +6216,7 @@ definitions:
         type: string
         maxLength: 4000
   o_CP_ShadowJob:
+    type: object
     description: The core LMS job.
     properties:
       Buffer Distance:
@@ -6158,6 +6235,7 @@ definitions:
         type: number
         format: '9,0'
   o_CP_ShadowProcess:
+    type: object
     description: The core LMS process.
     properties:
       Where am I Image:
@@ -6166,6 +6244,7 @@ definitions:
         type: number
         format: '9,0'
   o_CP_TimeLog:
+    type: object
     description: The core LMS time capture log on a process.
     required:
       - Log Date
@@ -6200,6 +6279,7 @@ definitions:
       User:
         $ref: '#/definitions/u_Users'
   o_CR_AgendaType:
+    type: object
     description: TBD
     properties:
       Active:
@@ -6210,6 +6290,7 @@ definitions:
         type: string
         maxLength: 1000
   o_CR_Address:
+    type: object
     description: 'Address is an effective-dated value that assigns a tightly constructed address to a parcel, building, suite, or entryway.'
     required:
       - Municipality
@@ -6278,6 +6359,7 @@ definitions:
         description: 'When creating an Address record, the user may wish to indicate that the address is temporary using this field.  This will flag the address record as temporary for anyone that may use it in the system.'
         type: boolean
   o_CR_AddressableObject:
+    type: object
     description: 'Addressable Object is a cross-reference object that determines what object (Parcel, Building, Suite, Entryway) and Address (o_CR_Address) is for.'
     properties:
       Address:
@@ -6301,6 +6383,7 @@ definitions:
         type: string
         maxLength: 4000
   o_CR_AddressHistory:
+    type: object
     description: TBD (Historical addresses for addressable objects.)
     required:
       - Municipality
@@ -6341,6 +6424,7 @@ definitions:
         type: string
         maxLength: 20
   o_CR_Building:
+    type: object
     description: TBD
     properties:
       STUBBED:
@@ -6350,6 +6434,7 @@ definitions:
           - this
           - info
   o_CodeSection:
+    type: object
     description: 'The legal text associated with a code section (Violation, Deficiency)'
     properties:
       Code Section Text:
@@ -6380,6 +6465,7 @@ definitions:
       Violations:
         $ref: '#/definitions/o_Violations'
   o_Condition:
+    type: object
     description: 'A Condition associated with a planning job or permit, linked to a job type, and either a parcel or a project.'
     required:
       - Reminder Text
@@ -6477,12 +6563,14 @@ definitions:
         type: string
         maxLength: 4000
   o_ConditionStatus:
+    type: object
     description: TBD
     properties:
       Name:
         type: string
         maxLength: 20
   o_CR_Contact:
+    type: object
     description: The name and contact information for a contact specifically related to a single application.
     required:
       - Name
@@ -6511,6 +6599,7 @@ definitions:
         description: TBD
         type: boolean
   o_Contractor:
+    type: object
     description: The Contractor that will be carrying out some portion of the construction work approved by the Permit.
     required:
       - Business Name
@@ -6616,6 +6705,7 @@ definitions:
         description: 'System Infrastructure field, DO NOT USE FOR REPORTING'
         type: boolean
   o_CR_Customer:
+    type: object
     description: 'The applicant, and the citizen or contractor who has created the external LMS user account.'
     required:
       - First Name
@@ -6680,6 +6770,7 @@ definitions:
           - Telus
           - Virgin
   o_CR_Document:
+    type: object
     description: documents uploaded by users
     required:
       - Upload File
@@ -6726,6 +6817,7 @@ definitions:
         type: boolean
         description: 'When set, the Locked flag will prevent the file from being removed or updated in the system.'
   o_CR_Entryway:
+    type: object
     description: This associates an entryway with a building.
     required:
       - Building
@@ -6737,6 +6829,7 @@ definitions:
       Building:
         $ref: '#/definitions/o_CR_Building'
   o_CR_Parcel:
+    type: object
     description: The parcel is the titled parcel on which the construction work is to be carried out.
     required:
       - Parcel ID
@@ -6804,6 +6897,7 @@ definitions:
         description: 'System Infrastructure field, DO NOT USE FOR REPORTING'
         type: boolean
   o_CR_ParcelOwner:
+    type: object
     description: Parcel owner is typically copied from GIS or the system of record for parcels.
     properties:
       Address City:
@@ -6915,6 +7009,7 @@ definitions:
         type: string
         maxLength: 5
   o_CR_Module:
+    type: object
     description: This stores specific setup metadata for LMS
     properties:
       PL Notification Frequency:
@@ -7062,6 +7157,7 @@ definitions:
         type: number
         format: '14,0'
   o_CR_Municipality:
+    type: object
     description: Provides the list of municipalities for cross-reference to parcels
     properties:
       Active:
@@ -7076,6 +7172,7 @@ definitions:
         type: string
         maxLength: 4000
   o_CR_PhoneNumber:
+    type: object
     description: stores a formatted phone number
     required:
       - International Phone Number
@@ -7129,6 +7226,7 @@ definitions:
         type: string
         maxLength: 4000
   o_CR_StreetNames:
+    type: object
     description: This forms the street name portion of the inheritable structure for addressing
     properties:
       Post Type:
@@ -7155,6 +7253,7 @@ definitions:
         description: 'When set to Yes, LMS will allow the Street Name record to be used in the system.'
         type: boolean
   o_CR_StreetPostDirections:
+    type: object
     description: This forms the street direction portion of the inheritable structure for addressing
     properties:
       Active:
@@ -7169,6 +7268,7 @@ definitions:
         type: string
         maxLength: 4000
   o_CR_StreetPostModifiers:
+    type: object
     description: This forms the street modifier portion of the inheritable structure for addressing
     properties:
       Active:
@@ -7183,6 +7283,7 @@ definitions:
         type: string
         maxLength: 4000
   o_CR_StreetPostType:
+    type: object
     description: This forms the street type portion of the inheritable structure for addressing
     properties:
       Active:
@@ -7197,6 +7298,7 @@ definitions:
         type: string
         maxLength: 4000
   o_CR_StreetPreModifiers:
+    type: object
     description: This forms the street modifier portion of the inheritable structure for addressing
     properties:
       Active:
@@ -7211,6 +7313,7 @@ definitions:
         type: string
         maxLength: 4000
   o_CR_StreetPreDirections:
+    type: object
     description: This forms the street direction portion of the inheritable structure for addressing
     properties:
       Active:
@@ -7225,6 +7328,7 @@ definitions:
         type: string
         maxLength: 4000
   o_CR_StreetPreTypes:
+    type: object
     description: This forms the street types portion of the inheritable structure for addressing
     properties:
       Active:
@@ -7239,6 +7343,7 @@ definitions:
         type: string
         maxLength: 4000
   o_CR_StreetSegment:
+    type: object
     description: Street Segment object that correlates to a GIS feature.
     properties:
       Addressable Object:
@@ -7271,6 +7376,7 @@ definitions:
         description: 'When set to Yes, LMS allows the Street Segment record to be used in the system.'
         type: boolean
   o_CR_Suite:
+    type: object
     description: This is the cross reference that associates a suite to a building.
     properties:
       Building:
@@ -7280,6 +7386,7 @@ definitions:
         type: string
         maxLength: 100
   o_CR_Warning:
+    type: object
     description: Warnings text is stored here.
     required:
       - Description
@@ -7293,6 +7400,7 @@ definitions:
         format: date
         description: 'When creating a Warning, the user may enter a date where the Warning is automatically released.'
   o_ContractorLicense:
+    type: object
     description: Contractor Licenses as required for permitting (distict from business licensing for contractors).
     required:
       - Contractor License Type
@@ -7336,6 +7444,7 @@ definitions:
         description: 'When set to Yes, the jurisdiction has verified the Contractor''s license and it can now be used in the system.'
         type: boolean
   o_ContractorLicenseType:
+    type: object
     description: Contractor License type for permitting.
     properties:
       Is Active:
@@ -7365,6 +7474,7 @@ definitions:
         type: number
         maxLength: 9
   o_Deficiency:
+    type: object
     description: Deficiencies found in permit inspections.
     required:
       - Deficiency Type
@@ -7401,6 +7511,7 @@ definitions:
         type: string
         maxLength: 100
   o_Entryway:
+    type: object
     description: 'This is the entryway object that defines the address for an entryway on a building, and associates suites that use the entryway address.'
     properties:
       Description:
@@ -7415,6 +7526,7 @@ definitions:
       Parcel:
         $ref: '#/definitions/o_CR_Parcel'
   o_EP_DocumentType:
+    type: object
     description: ePlans document types.
     properties:
       Batch Stamped:
@@ -7440,6 +7552,7 @@ definitions:
         description: 'When set to Yes, this indicates that the document type can be viewed and managed through the Electronic Plan Review Module.'
         type: boolean
   o_ePlansJobReviewXref:
+    type: object
     description: TBD
     properties:
       STUBBED:
@@ -7449,6 +7562,7 @@ definitions:
           - find
           - this
   o_EquipmentType:
+    type: object
     description: 'Administrable list of equipment types as used in electrical, mechanical and plumbing equipment lists.'
     properties:
       Active:
@@ -7474,6 +7588,7 @@ definitions:
         type: integer
         maxLength: 9
   o_EquipmentQuantity:
+    type: object
     description: 'Equipment lists as entered on electrical, mechanical or plumbing permits.'
     required:
       - Equipment Type
@@ -7494,6 +7609,7 @@ definitions:
         type: number
         format: '14,0'
   o_ER_DistributionList:
+    type: object
     description: Standard distribution lists as used in Referrals.
     required:
       - Name
@@ -7513,6 +7629,7 @@ definitions:
       User:
         $ref: '#/definitions/u_Users'
   o_ER_DocumentDistributionXref:
+    type: object
     description: TBD
     properties:
       Referral:
@@ -7520,6 +7637,7 @@ definitions:
       Converted Document:
         $ref: '#/definitions/d_ElectronicDocument'
   o_ER_ManualRecipient:
+    type: object
     description: Manual recipient (not part of an agency) for distribution of Referrals.
     required:
       - Name
@@ -7549,6 +7667,7 @@ definitions:
         type: string
         maxLength: 30
   o_ER_ReferralAgency:
+    type: object
     description: An agency established for the purpose of responding to Referrals.
     required:
       - Name
@@ -7633,6 +7752,7 @@ definitions:
       User (IND):
         $ref: '#/definitions/u_Users'
   o_ER_ReferralAgencyRep:
+    type: object
     description: Users that are associated with a referral agency.
     properties:
       CC:
@@ -7680,6 +7800,7 @@ definitions:
       User Name:
         $ref: '#/definitions/u_Users'
   o_ER_ReferralCenter:
+    type: object
     description: TBD
     required:
       - Days to Keep Summaries Opened
@@ -7718,6 +7839,7 @@ definitions:
         type: string
         maxLength: 4000
   o_ER_ReferralQuestion:
+    type: object
     description: A question that forms part of a Referral questionnaire.
     required:
       - Question
@@ -7744,6 +7866,7 @@ definitions:
         type: number
         format: '4,0'
   o_ER_ReferralType:
+    type: object
     description: Template referral that is copied to create Referrals.
     required:
       - Name
@@ -7855,6 +7978,7 @@ definitions:
         type: integer
         maxLength: 9
   o_ER_RequestRecommendation:
+    type: object
     description: TBD
     properties:
       Recommendation:
@@ -7871,6 +7995,7 @@ definitions:
         type: number
         format: '4,0'
   o_ER_RequestRecommendationType:
+    type: object
     description: TBD
     required:
       - Recommendation
@@ -7892,11 +8017,13 @@ definitions:
         type: number
         format: '4,0'
   o_ER_SummaryRecommendation:
+    type: object
     description: TBD
     properties:
       Referral:
         $ref: '#/definitions/j_ER_Referral'
   o_ER_SummaryRecommendationType:
+    type: object
     description: TBD
     required:
       - Recommendation
@@ -7915,12 +8042,14 @@ definitions:
         type: number
         format: '4,0'
   o_FN_AuthPrePaymentXref:
+    type: object
     description: TBD
     properties:
       Description:
         type: string
         maxLength: 4000
   o_FN_AuthFinancialProfile:
+    type: object
     description: Authorization Financial Profiles are part of the Common Finance integration. Authorization Financial Profiles are linked to a single Job Type in LMS.
     properties:
       Credit Card Payment Limit Override:
@@ -7967,6 +8096,7 @@ definitions:
         type: string
         maxLength: 4000
   o_FN_ResponsibleParty:
+    type: object
     description: 'This is the party identified as being responsible for fees on an LMS job. In the event that an overpayment is allocated to a user, this is the user who "owns" the funds.'
     properties:
       Interest Exempt:
@@ -7985,6 +8115,7 @@ definitions:
         type: number
         format: '9,0'
   o_FN_BatchPrintType:
+    type: object
     description: TBD
     properties:
       Description:
@@ -7995,6 +8126,7 @@ definitions:
         type: string
         maxLength: 4000
   o_FN_CashHandlingArea:
+    type: object
     description: A defined group for reconciliation of payment receipts to payments received.
     properties:
       Is External Cash Handling Area:
@@ -8032,6 +8164,7 @@ definitions:
         type: string
         maxLength: 4000
   o_FN_Fee:
+    type: object
     description: The Common Finance metadata for a specific fee.
     required:
       - Fee Date
@@ -8116,6 +8249,7 @@ definitions:
       Tax:
         $ref: '#/definitions/o_FN_Tax'
   o_FN_FeeAdjustment:
+    type: object
     description: The record of an adjustment made to the value of a calculated fee item.
     required:
       - Amount
@@ -8179,6 +8313,7 @@ definitions:
       Tracking Number:
         $ref: '#/definitions/o_FN_Fee'
   o_FN_FeeDisplay:
+    type: object
     description: 'This is the dollar amount of the fee item, as calculated by LMS.'
     properties:
       Referenced ObjectId:
@@ -8187,6 +8322,7 @@ definitions:
       Select:
         type: boolean
   o_FN_FeeTax:
+    type: object
     description: The calculated tax amount associated with a fee.
     properties:
       Amount:
@@ -8202,6 +8338,7 @@ definitions:
         type: number
         maxLength: 5
   o_FN_FeeType:
+    type: object
     description: The metadata associated with a fee type that controls integration with the GL.
     properties:
       Allow Negative Fees:
@@ -8227,6 +8364,7 @@ definitions:
         type: string
         maxLength: 4000
   o_FN_ForeignExchange:
+    type: object
     description: The conversion factors that are used to reconcile payments made in one currency with bank deposits that are shown in another.
     properties:
       Cash Handling Area:
@@ -8244,6 +8382,7 @@ definitions:
       Payment:
         $ref: '#/definitions/o_FN_Payment'
   o_FN_GLAccount:
+    type: object
     description: GL Account details that define integration between Common Finance and the GL.
     properties:
       Accounts Receivable Account?:
@@ -8276,11 +8415,13 @@ definitions:
         type: string
         maxLength: 4000
   o_FN_GLTransaction:
+    type: object
     description: TBD
     properties:
       G/L Account:
         $ref: '#/definitions/o_FN_GLAccount'
   o_FN_Invoice:
+    type: object
     description: Common Finance invoice details.
     required:
       - Payment Due Date
@@ -8377,6 +8518,7 @@ definitions:
         type: string
         maxLength: 4000
   o_FN_MgmtReports:
+    type: object
     description: TBD
     properties:
       Cash Handling Area:
@@ -8407,6 +8549,7 @@ definitions:
           - 'No'
           - 'Yes'
   o_FN_Payment:
+    type: object
     description: The record of a payment as received by LMS through a cash handling area.
     required:
       - Deposit Date
@@ -8529,6 +8672,7 @@ definitions:
         type: string
         maxLength: 4000
   o_FN_PaymentAdjustment:
+    type: object
     description: An adjustment made to a payment received in LMS to account for changes.
     properties:
       Cash Handling Area:
@@ -8578,6 +8722,7 @@ definitions:
       Reverse Incorrect Distribution:
         $ref: '#/definitions/o_FN_PaymentDistribution'
   o_FN_PaymentDistribution:
+    type: object
     description: This is a record of the specific fee and tax items that were paid by a single payment item.
     properties:
       Amount:
@@ -8609,6 +8754,7 @@ definitions:
         type: string
         maxLength: 20
   o_FN_PaymentMethod:
+    type: object
     description: Administrable metadata that identifies the various payment methods acceptable for LMS.
     properties:
       Auto Close?:
@@ -8628,6 +8774,7 @@ definitions:
         type: string
         maxLength: 30
   o_FN_PaymentTaxDistribution:
+    type: object
     description: TBD
     properties:
       Amount:
@@ -8635,6 +8782,8 @@ definitions:
         type: number
         format: '14,0'
   o_FN_PrePaymentAccount:
+    type: object
+    title: o_FN_PrePaymentAccount
     description: The Common Finance account established internally to identify the specific ownership of a prepayment amount.
     properties:
       Authorization PrePay Xref ObjectId:
