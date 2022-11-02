@@ -28,7 +28,7 @@ definitions:
         $ref: '#/definitions/o_FN_FeeDisplay'
       Bank/Surety Name:                
         description: The name of the Bank or Surety Institution that has granted the Bond to the Applicant.        
-        example: "Field Name - BankSuretyName"
+        example: "BankSuretyName"
         type: string
         maxLength: 4000
       Bank/Surety Address:
