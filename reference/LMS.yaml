@@ -9150,6 +9150,8 @@ definitions:
         type: number
         maxLength: 9
   o_GasUtility:
+    title: o_GasUtility
+    type: object
     description: Administrable list of utility companies providing gas service.
     properties:
       Active?:
@@ -9172,6 +9174,8 @@ definitions:
         type: number
         maxLength: 9
   o_GeneralPermitType:
+    title: o_GeneralPermitType
+    type: object
     description: This is an extension of the standard permit job that adds a subtype to the General Permit. Subtypes are associated with pre-configured sets of attributes laid out on a details tab.
     properties:
       Certificate Type:
@@ -9221,6 +9225,8 @@ definitions:
         type: number
         maxLength: 9
   o_Hold:
+    title: o_Hold
+    type: object
     description: Holds are used to prevent completion of workflow on permits.
     required:
       - Description
@@ -9254,6 +9260,8 @@ definitions:
           - Hold Completion
           - Hold Issuance
   o_InspectionChecklistGroup:
+    title: o_InspectionChecklistGroup
+    type: object
     description: A group of checklist items that are associated with an inspection type.
     properties:
       Group Name:
@@ -9273,6 +9281,8 @@ definitions:
         type: number
         format: '9,0'
   o_InspectionChecklistItem:
+    title: o_InspectionChecklistItem
+    type: object
     description: individual checklist items that are associated with an inspection type via an inspection checklist group.
     properties:
       Comments:
@@ -9293,6 +9303,8 @@ definitions:
       Unresolved Deficiency:
         $ref: '#/definitions/o_Deficiency'
   o_InspectionChecklistReq:
+    title: o_InspectionChecklistReq
+    type: object
     description: Identifies whether a checklist item is required for a specific checklist group.
     properties:
       Active:
@@ -9318,6 +9330,8 @@ definitions:
         type: number
         maxLength: 9
   o_InspectionDiscipline:
+    title: o_InspectionDiscipline
+    type: object
     description: Identifies which inspectors are able to perform an inspection.
     required:
       - Description
@@ -9359,6 +9373,8 @@ definitions:
         type: number
         maxLength: 9
   o_InspectionType:
+    title: o_InspectionType
+    type: object
     description: 'An administrable inspection type, defined for use in Permit Inspections.'
     required:
       - description
@@ -9406,6 +9422,8 @@ definitions:
         type: number
         maxLength: 9
   o_JobTypes:
+    title: o_JobTypes
+    type: object
     description: This object stores the "Level 1 Configuration" items for each LMS Job Type.
     properties:
       Batch Notifications - Emails Sent Per Hour:
@@ -9456,6 +9474,8 @@ definitions:
         description: 'System Infrastructure field, DO NOT USE FOR REPORTING'
         type: boolean
   o_LMS_CodeSectionTemplate:
+    title: o_LMS_CodeSectionTemplate
+    type: object
     description: TBD
     properties:
       Active?:
@@ -9485,6 +9505,8 @@ definitions:
         type: number
         maxLength: 9
   o_LMS_InvestigationResult:
+    title: o_LMS_InvestigationResult
+    type: object
     description: Administrable list of results for investigations
     properties:
       Active?:
@@ -9501,6 +9523,8 @@ definitions:
         type: number
         maxLength: 9
   o_LMS_NotificationRecipients:
+    title: o_LMS_NotificationRecipients
+    type: object
     description: The list of receipients for a notification on a Planning Approval (not related to Referrals).
     required:
       - Recipient Address
@@ -9517,6 +9541,8 @@ definitions:
         type: string
         maxLength: 4000
   o_LMS_Person:
+    title: o_LMS_Person
+    type: object
     description: This is the "container" for individuals identified on a Case File
     required:
       - First Name
@@ -9599,6 +9625,8 @@ definitions:
         description: 'System Infrastructure field, DO NOT USE FOR REPORTING'
         type: boolean
   o_LMS_WorkRequest:
+    title: o_LMS_WorkRequest
+    type: object
     description: Work order generated from a Case File
     properties:
       Address:
@@ -9626,6 +9654,8 @@ definitions:
         type: string
         maxLength: 400
   o_MeetingParty:
+    title: o_MeetingParty
+    type: object
     description: Persons (see "Party Type") identified as required to be present at a meeting
     required:
       - Party Type
@@ -9679,6 +9709,8 @@ definitions:
       User:
         $ref: '#/definitions/u_Users'
   o_MeetingResultType:
+    title: o_MeetingResultType
+    type: object
     description: Administrable list of meeting result types
     properties:
       Active:
@@ -9689,6 +9721,8 @@ definitions:
         type: string
         maxLength: 100
   o_MeetingScheduleXref:
+    title: o_MeetingScheduleXref
+    type: object
     description: Captures the scheduling of a meeting item into an agenda.
     properties:
       Meeting Agenda:
@@ -9696,6 +9730,8 @@ definitions:
       Meeting Item:
         $ref: '#/definitions/j_MeetingItem'
   o_MeetingType:
+    title: o_MeetingType
+    type: object
     description: Administrable list of meeting item types
     properties:
       Active:
@@ -9706,6 +9742,8 @@ definitions:
         type: string
         maxLength: 100
   o_PermitCondition:
+    title: o_PermitCondition
+    type: object
     description: 'Conditions are pre-determined actions that take place when a trigger is encountered in workflow. Conditions are related to permits, and may have their source in a planning approval.'
     required:
       - All Actions
@@ -9771,6 +9809,8 @@ definitions:
         type: string
         maxLength: 4000
   o_PermitHold:
+    title: o_PermitHold
+    type: object
     required:
       - Description
       - Type
@@ -9805,6 +9845,8 @@ definitions:
           - Hold Completion
           - Hold Issuance
   o_PermitReviewType:
+    title: o_PermitReviewType
+    type: object
     description: Administrable list of review type names
     properties:
       Active:
@@ -9819,6 +9861,8 @@ definitions:
         type: string
         maxLength: 4000
   o_PermitTerm:
+    title: o_PermitTerm
+    type: object
     description: Terms are legal text that are printed on a permit document
     required:
       - Print Order
@@ -9839,7 +9883,9 @@ definitions:
         description: Used to record the Text contained within the Permit Term.
         type: string
         maxLength: 4000
-  o_PowerUtility:
+  o_PowerUtility:    
+    title: o_PowerUtility
+    type: object
     description: Administrable list of utility companies providing electrical power service.
     properties:
       Active?:
@@ -9861,6 +9907,8 @@ definitions:
         type: number
         format: '9,0'
   o_ProcessType:
+    title: o_ProcessType
+    type: object
     description: TBD
     properties:
       Is ABC?:
@@ -9868,6 +9916,8 @@ definitions:
       Is LMS:
         type: boolean
   o_PI_DeficiencyType:
+    title: o_PI_DeficiencyType
+    type: object
     description: Administrable list of deficiency types that may be selected for an inspection
     properties:
       Active?:
@@ -9894,6 +9944,8 @@ definitions:
         type: number
         maxLength: 9
   o_PI_FederalTypeOfWork:
+    title: o_PI_FederalTypeOfWork
+    type: object
     description: The US and Canadian Federal Government classification for the type of work. Used to complete annual reporting on construction statistics.
     properties:
       Active?:
@@ -9915,6 +9967,8 @@ definitions:
         description: 'System Infrastructure field, DO NOT USE FOR REPORTING'
         type: boolean
   o_PI_Location:
+    title: o_PI_Location
+    type: object
     description: 'A non-addressed location (either a named location or building, or a location identified only by its latitude and longitude).'
     required:
       - Name
@@ -9940,6 +9994,8 @@ definitions:
         type: string
         maxLength: 4000
   o_PI_PermitName:
+    title: o_PI_PermitName
+    type: object
     description: 'This is the user-facing name for a permit; either a building permit, general permit, or trade permit (electrical, mechanical, plumbing).'
     properties:
       Apply from Customer Portal:
@@ -10014,6 +10070,8 @@ definitions:
         description: 'System Infrastructure field, DO NOT USE FOR REPORTING'
         type: boolean
   o_PI_PermitNameWorkType:
+    title: o_PI_PermitNameWorkType
+    type: object
     description: Administrable cross-reference that identifies which work types are available for selection in a permit with a specific name
     properties:
       Job Type Permit Name:
@@ -10023,6 +10081,8 @@ definitions:
       Work Type:
         $ref: '#/definitions/o_PI_WorkType'
   o_PI_WorkScope:
+    title: o_PI_WorkScope
+    type: object
     description: 'Administrable list of Work Scopes, dependent on Work Types and Use Categories. Work Scopes may be exclusive (only one per permit) or may allow multiple values per permit. Primary Work Scope is the "exclusive scope" or the first work scope chosen by the applicant.'
     properties:
       Code:
@@ -10041,6 +10101,8 @@ definitions:
         description: 'System Infrastructure field, DO NOT USE FOR REPORTING'
         type: boolean
   o_PI_WorkType:
+    title: o_PI_WorkType
+    type: object
     description: Administrable list of permit work types
     properties:
       Code:
