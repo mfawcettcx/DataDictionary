@@ -14,7 +14,7 @@ info:
     name: Apache 2.0
     url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
 definitions:
-  j_BondEscrow:    
+  j_BondEscrow:
     type: object
     title: j_BondEscrow
     description: 'The LMS Bonds and Escrow job. Used to establish surety for approved work. Includes approvals for additions, releases, and tracks residual value.'
@@ -26,9 +26,9 @@ definitions:
     properties:
       Fee Display:
         $ref: '#/definitions/o_FN_FeeDisplay'
-      Bank/Surety Name:                
-        description: The name of the Bank or Surety Institution that has granted the Bond to the Applicant.        
-        example: "BankSuretyName"
+      Bank/Surety Name:
+        description: The name of the Bank or Surety Institution that has granted the Bond to the Applicant.
+        example: BankSuretyName
         type: string
         maxLength: 4000
       Bank/Surety Address:
@@ -36,12 +36,12 @@ definitions:
         type: string
         maxLength: 4000
         properties:
-          field name:  
-            type: string          
+          field name:
+            type: string
             description: this is a test
       Bond/Escrow Expiration Date:
-        description: The date that the Bond or Escrow Account will expire on.               
-        type: string          
+        description: The date that the Bond or Escrow Account will expire on.
+        type: string
         format: date
       Comments:
         description: Any comments entered by staff when setting up the Bond/Escrow Account.
@@ -75,7 +75,7 @@ definitions:
         description: The balance available to the jurisdiction after all deductions and increases are factored in.
         type: number
         format: '14,0'
-        example: "Field Name - Remaining Balance"              
+        example: Field Name - Remaining Balance
       Authorization Financial Profile:
         $ref: '#/definitions/o_FN_AuthFinancialProfile'
       Bond/Escrow Credit Approval Date:
@@ -2071,7 +2071,6 @@ definitions:
           - 'B: Refrigeration'
           - 'C: Portable Stationary'
           - 'D: Fireman'
-
   j_BL_BatchNotification:
     title: j_BL_BatchNofication
     type: object
@@ -2601,7 +2600,6 @@ definitions:
         $ref: '#/definitions/o_FN_PaymentMethod'
       Auth PrepPay XRef:
         $ref: '#/definitions/o_FN_AuthPrePaymentXref'
-
   j_FN_CreateInvoiceReport:
     title: j_FN_CreateInvoiceReport
     type: object
@@ -2609,8 +2607,7 @@ definitions:
     properties:
       Invoice:
         $ref: '#/definitions/o_FN_Invoice'
-
-  j_FN_DailyClose:    
+  j_FN_DailyClose:
     title: j_FN_DailyClose
     type: object
     description: This job gathers all the payments received in a Cash Handling Area and provides details to support end-of-period reconciliation of cash to payments received.
@@ -2628,7 +2625,6 @@ definitions:
         $ref: '#/definitions/o_FN_Payment'
       Process:
         $ref: '#/definitions/p_FN_PerformDailyClose'
-
   j_FN_PrintDocumentBatch:
     title: j_FN_PrintDocumentBatch
     type: object
@@ -2640,10 +2636,9 @@ definitions:
         $ref: '#/definitions/o_FN_BatchPrintType'
       Documents Assembled:
         $ref: '#/definitions/d_StoredReport'
-
   j_LMS_CaseFile:
     title: j_LMS_CaseFile
-    type: object    
+    type: object
     description: This is the LMS Case File Job.
     required:
       - Brief Description
@@ -2696,7 +2691,6 @@ definitions:
         $ref: '#/definitions/u_Users'
       Complaint:
         $ref: '#/definitions/j_LMS_Complaint'
- 
   j_LMS_Complaint:
     title: j_LMS_Complaint
     type: object
@@ -2766,7 +2760,6 @@ definitions:
         maxLength: 10
       Complaint Type:
         $ref: '#/definitions/o_CE_ComplaintType'
-        
   j_PI_ElectricalPermit:
     title: j_PI_ElectricalPermit
     type: object
@@ -4910,7 +4903,7 @@ definitions:
   o_BL_License:
     title: o_BL_License
     type: object
-    description: A business license, issued to a business.
+    description: 'A business license, issued to a business.'
     properties:
       Access Group (IND):
         $ref: '#/definitions/o_AccessGroup'
@@ -7777,7 +7770,6 @@ definitions:
         $ref: '#/definitions/j_ER_Referral'
       Converted Document:
         $ref: '#/definitions/d_ElectronicDocument'
-
   o_ER_ManualRecipient:
     title: o_ER_ManualRecipient
     type: object
@@ -8166,7 +8158,7 @@ definitions:
         description: TBD
         type: number
         format: '4,0'
-  o_ER_SummaryRecommendation:    
+  o_ER_SummaryRecommendation:
     title: o_ER_SummaryRecommendation
     type: object
     description: TBD
@@ -8525,7 +8517,6 @@ definitions:
         description: 'System field used by ADIEU, DO NOT USE FOR REPORTING'
         type: string
         maxLength: 4000
-
   o_FN_ForeignExchange:
     title: o_FN_ForeignExchange
     type: object
@@ -8956,7 +8947,7 @@ definitions:
         format: '14,0'
   o_FN_PrePaymentAccount:
     title: o_FN_PrePaymentAccount
-    type: object    
+    type: object
     description: The Common Finance account established internally to identify the specific ownership of a prepayment amount.
     properties:
       Authorization PrePay Xref ObjectId:
@@ -9540,6 +9531,35 @@ definitions:
         description: The mailing address of the individual that will be notified.
         type: string
         maxLength: 4000
+  o_LMS_WorkRequest:
+    title: o_LMS_WorkRequest
+    type: object
+    description: Work order generated from a Case File
+    properties:
+      Address:
+        $ref: '#/definitions/o_CR_Address'
+      Case File:
+        $ref: '#/definitions/j_LMS_CaseFile'
+      Date:
+        type: string
+        format: date
+      Name:
+        type: string
+        maxLength: 100
+      Parcel Address:
+        $ref: '#/definitions/o_CR_Parcel'
+      Perform Investigation:
+        $ref: '#/definitions/p_LMS_PerformInvestigation'
+      Phone Number:
+        type: string
+        format: phone number
+        maxLength: 10
+      Request Text:
+        type: string
+        maxLength: 4000
+      Specific Location:
+        type: string
+        maxLength: 400
   o_LMS_Person:
     title: o_LMS_Person
     type: object
@@ -9624,35 +9644,6 @@ definitions:
       Web Search Selected:
         description: 'System Infrastructure field, DO NOT USE FOR REPORTING'
         type: boolean
-  o_LMS_WorkRequest:
-    title: o_LMS_WorkRequest
-    type: object
-    description: Work order generated from a Case File
-    properties:
-      Address:
-        $ref: '#/definitions/o_CR_Address'
-      Case File:
-        $ref: '#/definitions/j_LMS_CaseFile'
-      Date:
-        type: string
-        format: date
-      Name:
-        type: string
-        maxLength: 100
-      Parcel Address:
-        $ref: '#/definitions/o_CR_Parcel'
-      Perform Investigation:
-        $ref: '#/definitions/p_LMS_PerformInvestigation'
-      Phone Number:
-        type: string
-        format: phone number
-        maxLength: 10
-      Request Text:
-        type: string
-        maxLength: 4000
-      Specific Location:
-        type: string
-        maxLength: 400
   o_MeetingParty:
     title: o_MeetingParty
     type: object
@@ -9883,7 +9874,7 @@ definitions:
         description: Used to record the Text contained within the Permit Term.
         type: string
         maxLength: 4000
-  o_PowerUtility:    
+  o_PowerUtility:
     title: o_PowerUtility
     type: object
     description: Administrable list of utility companies providing electrical power service.
@@ -10121,6 +10112,8 @@ definitions:
         description: 'System Infrastructure field, DO NOT USE FOR REPORTING'
         type: boolean
   o_PI_TypeOfBuilding:
+    title: o_PI_TypeOfBuilding
+    type: object
     description: The US and Canadian Federal Government classification for the type of building. Used to complete annual reporting on construction statistics.
     properties:
       Code:
@@ -10139,6 +10132,8 @@ definitions:
         description: 'System Infrastructure field, DO NOT USE FOR REPORTING'
         type: boolean
   o_PI_UseDesignation:
+    title: o_PI_UseDesignation
+    type: object
     description: 'Use designations are typically "Residential", "Commercial", "Industrial", etc. This is an administrable list, and many other values may be meaningful.'
     properties:
       Code:
@@ -10159,6 +10154,8 @@ definitions:
         description: 'System Infrastructure field, DO NOT USE FOR REPORTING'
         type: boolean
   o_PL_AdministrativeApprover:
+    title: o_PL_AdministrativeApprover
+    type: object
     properties:
       Application Name:
         $ref: '#/definitions/o_PL_ApplicationName'
@@ -10167,6 +10164,8 @@ definitions:
       Approver:
         $ref: '#/definitions/u_Users'
   o_PL_ApplicationName:
+    title: o_PL_ApplicationName
+    type: object
     description: Administrable list of planning application names cross-referenced to planning job types
     properties:
       Application Name:
@@ -10244,6 +10243,8 @@ definitions:
         description: 'System Infrastructure field, DO NOT USE FOR REPORTING'
         type: boolean
   o_PL_ApplicationScope:
+    title: o_PL_ApplicationScope
+    type: object
     description: Administrable list of work scopes associated with a planning application name
     properties:
       Code:
@@ -10262,6 +10263,8 @@ definitions:
         description: 'System Infrastructure field, DO NOT USE FOR REPORTING'
         type: boolean
   o_PL_ApplicationType:
+    title: o_PL_ApplicationType
+    type: object
     description: Administrable list of application types associated with a planning application name
     properties:
       Code:
@@ -10280,6 +10283,8 @@ definitions:
         description: 'System Infrastructure field, DO NOT USE FOR REPORTING'
         type: boolean
   o_PL_ApplicationTypeScope:
+    title: o_PL_ApplicationTypeScoe
+    type: object
     description: Administrable cross-reference of valid application scopes for an application type
     properties:
       Application Name:
@@ -10289,6 +10294,8 @@ definitions:
       Application Type:
         $ref: '#/definitions/o_PL_ApplicationType'
   o_PL_ApprovalType:
+    title: o_PL_ApprovalType
+    type: object
     description: TBD
     required:
       - Name
@@ -10301,6 +10308,8 @@ definitions:
         type: string
         maxLength: 60
   o_PL_CodeSection:
+    title: o_PL_CodeSection
+    type: object
     description: Code sections associated with planning "Finding" items
     properties:
       Active:
@@ -10319,6 +10328,8 @@ definitions:
         type: string
         maxLength: 4000
   o_PL_ComprehensivePlan:
+    title: o_PL_ComprehensivePlan
+    type: object
     description: Administrable list of jurisdiction comprehensive plans
     required:
       - Name
@@ -10331,6 +10342,8 @@ definitions:
         type: string
         maxLength: 60
   o_PL_EnvDetermination:
+    title: o_PL_EnvDetermination
+    type: object
     description: Administrable list of Environmental Determination types
     required:
       - Name
@@ -10343,6 +10356,8 @@ definitions:
         type: string
         maxLength: 60
   o_PL_EventAttendee:
+    title: o_PL_EventAttendee
+    type: object
     description: List of attendees at a planning application event
     required:
       - Attendee Type
@@ -10376,6 +10391,8 @@ definitions:
         type: string
         maxLength: 4000
   o_PL_EventMinutes:
+    title: o_PL_EventMinutes
+    type: object
     description: Record of significant input provided by an attendee at a planning event
     required:
       - Event Type
@@ -10410,6 +10427,8 @@ definitions:
         type: string
         maxLength: 100
   o_PL_EventType:
+    title: o_PL_EventType
+    type: object
     description: Administrable list of planning event types
     required:
       - Name
@@ -10422,6 +10441,8 @@ definitions:
         type: string
         maxLength: 60
   o_PL_Finding:
+    title: o_PL_Finding
+    type: object
     description: Administrable list of standard "Administrative" Finding items
     required:
       - Reference
@@ -10438,6 +10459,8 @@ definitions:
       Staff Report Section:
         $ref: '#/definitions/o_PL_StaffReportSection'
   o_PL_FindingItem:
+    title: o_PL_FindingItem
+    type: object
     description: List of finding items as applied to a specific planning application
     required:
       - Description
@@ -10462,6 +10485,8 @@ definitions:
       Staff Report Section:
         $ref: '#/definitions/o_PL_StaffReportSection'
   o_PL_FindingItemTemplate:
+    title: o_PL_FindingItemTemplate
+    type: object
     description: This is the standard template for reporting a finding item in a staff report
     required:
       - Description
@@ -10481,6 +10506,8 @@ definitions:
       Staff Report Section Template:
         $ref: '#/definitions/o_PL_StaffReportSectionTemplate'
   o_PL_MenuCategory:
+    title: o_PL_MenuCategory
+    type: object
     description: The categories into which planning application names are organized for the customer portal
     properties:
       Code:
@@ -10499,6 +10526,8 @@ definitions:
         description: 'System Infrastructure field, DO NOT USE FOR REPORTING'
         type: boolean
   o_PL_ProposedParcel:
+    title: o_PL_ProposedParcel
+    type: object
     description: The list of parcels that are proposed for creation as part of a planning application
     properties:
       Building Area:
@@ -10538,6 +10567,8 @@ definitions:
         type: number
         format: '8,0'
   o_PL_RoadAccessType:
+    title: o_PL_RoadAccessType
+    type: object
     description: Administrable list of road access types - Name
     properties:
       Active:
@@ -10548,12 +10579,16 @@ definitions:
         type: string
         maxLength: 60
   o_PL_Sign:
+    title: o_PL_Sign
+    type: object
     description: TBD
     properties:
       Sign Type:
         description: Used to record a Type of Sign that can be selected on a Planning Job.
         type: string
   o_PL_SignType:
+    title: o_PL_SignType
+    type: object
     description: Administrable list of sign types
     required:
       - Name
@@ -10566,6 +10601,8 @@ definitions:
         type: string
         maxLength: 60
   o_PL_StaffReportSection:
+    title: o_PL_StaffReportSection
+    type: object
     description: Administrable list of staff report section names
     required:
       - Section Number
@@ -10580,11 +10617,15 @@ definitions:
         type: number
         maxLength: 3
   o_PL_StaffReportSectionTemplate:
+    title: o_PL_StaffReportSectionTemplate
+    type: object
     description: Cross reference of staff report sections to be included for an application name
     properties:
       Application Name:
         $ref: '#/definitions/o_PL_ApplicationName'
   o_PL_UseDesignation:
+    title: o_PL_UseDesignation
+    type: object
     description: Administrable list of Use Designations for planning applictions
     properties:
       Code:
@@ -10603,6 +10644,8 @@ definitions:
         description: 'System Infrastructure field, DO NOT USE FOR REPORTING'
         type: boolean
   o_Question:
+    title: o_Question
+    type: object
     description: Questions that make up a business licensing questionnaire
     properties:
       Active:
@@ -10630,6 +10673,8 @@ definitions:
         type: number
         format: '3,0'
   o_Questionnaire:
+    title: o_Questionnaire
+    type: object
     description: Business licensing questionnaire
     properties:
       STUBBED:
@@ -10639,6 +10684,8 @@ definitions:
           - find
           - this
   o_Review:
+    title: o_Review
+    type: object
     description: Business licensing review type
     properties:
       BL Review Type:
@@ -10652,6 +10699,8 @@ definitions:
       Role:
         $ref: '#/definitions/o_Role'
   o_ReviewMatrix:
+    title: o_ReviewMatrix
+    type: object
     description: The review groups that determine what reviews are required for a permit
     properties:
       Active:
@@ -10694,6 +10743,8 @@ definitions:
         type: number
         format: '9,0'
   o_Role:
+    title: o_Role
+    type: object
     description: User Role
     properties:
       Active:
@@ -10711,6 +10762,8 @@ definitions:
       User:
         $ref: '#/definitions/u_Users'
   o_Suite:
+    title: o_Suite
+    type: object
     description: An object that represents a Suite in the jurisdiction
     properties:
       Tenant:
@@ -10725,6 +10778,8 @@ definitions:
       Address:
         $ref: '#/definitions/o_CR_Address'
   o_Term:
+    title: o_Term
+    type: object
     description: The instance of a term on a permit as determined by business rules
     required:
       - Print Order
@@ -10757,6 +10812,8 @@ definitions:
         type: string
         maxLength: 4000
   o_UserContactMethod:
+    title: o_UserContactMethod
+    type: object
     description: User contact method
     properties:
       Contact Method:
@@ -10771,6 +10828,8 @@ definitions:
         type: string
         maxLength: 4000
   o_Violations:
+    title: o_Violations
+    type: object
     description: Violation types as used in code enforcement
     required:
       - Code Section
@@ -10888,6 +10947,8 @@ definitions:
       Violation Type Object Id:
         $ref: '#/definitions/o_ViolationType'
   o_ViolationType:
+    title: o_ViolationType
+    type: object
     description: Administrable list of violation types
     properties:
       Active?:
@@ -10953,6 +11014,8 @@ definitions:
         type: number
         maxLength: 9
   o_Warning:
+    title: o_Warning
+    type: object
     description: TBD
     required:
       - Description
@@ -10968,6 +11031,8 @@ definitions:
         type: string
         format: date
   o_Zoning:
+    title: o_Zoning
+    type: object
     description: Zoning for a parcel as copied from the GIS
     required:
       - Short Description
@@ -10985,6 +11050,8 @@ definitions:
         type: string
         maxLength: 60
   p_BL_ProvideFurtherInformation:
+    title: p_BL_ProvideFurtherInformation
+    type: object
     description: Request to provide further information for a business license job
     properties:
       Comments:
@@ -11000,6 +11067,8 @@ definitions:
         type: string
         maxLength: 4000
   p_WO_SuperviseContractor:
+    title: p_WO_SuperviseContractor
+    type: object
     description: Process to record  costs and documentation provided by a contractor who completes work on a code enforcement work order
     properties:
       Assigned Contractor Name:
@@ -11015,6 +11084,8 @@ definitions:
         type: string
         maxLength: 4000
   p_WO_GenerateWorkSummary:
+    title: p_WO_GenerateWorkSummary
+    type: object
     description: Process to manage the summarization of costs for a work order
     properties:
       STUBBED:
@@ -11024,6 +11095,8 @@ definitions:
           - find
           - this
   p_WO_PerformWork:
+    title: p_WO_PerformWork
+    type: object
     description: Process assigned to a crew to perform work for a work order
     properties:
       Alternate Crew:
@@ -11246,6 +11319,8 @@ definitions:
         type: string
         maxLength: 4000
   p_PerformInspection:
+    title: p_PerformInspection
+    type: object
     description: Process assigned to an inspector for completing an inspection on a permit
     properties:
       Charge Re-inspection Fee:
@@ -11324,6 +11399,8 @@ definitions:
         type: string
         maxLength: 4000
   p_PL_CompletenessCheck:
+    title: p_PL_CompletenessCheck
+    type: object
     description: This is the standard "gatekeeper process" which ensures that any application is acceptable before it is accepted.
     properties:
       Required Information:
@@ -11335,6 +11412,8 @@ definitions:
         type: string
         maxLength: 4000
   p_PI_CompletenessCheck:
+    title: p_PI_CompletenessCheck
+    type: object
     description: This is the standard "gatekeeper process" which ensures that any application is acceptable before it is accepted.
     properties:
       Required Information:
@@ -11346,6 +11425,8 @@ definitions:
         type: string
         maxLength: 4000
   p_PI_ProvideFurtherInformation:
+    title: p_PI_ProvideFurtherInformation
+    type: object
     description: Process assigned to the applicant to collect additional information required by staff for this application.
     properties:
       Amendment Submit Action:
@@ -11372,6 +11453,8 @@ definitions:
         type: string
         maxLength: 4000
   p_LMS_SendNotification:
+    title: p_LMS_SendNotification
+    type: object
     description: Process assigned to staff for creation and sending of notices of violation
     properties:
       Comply By Date:
@@ -11396,6 +11479,8 @@ definitions:
       Violation Numbers:
         $ref: '#/definitions/o_Violations'
   p_PL_ProvideFurtherInformation:
+    title: p_PL_ProvideFurtherInformation
+    type: object
     description: Process assigned to the applicant to request additional information for a planning application
     properties:
       Comments:
@@ -11408,6 +11493,8 @@ definitions:
         type: string
         maxLength: 4000
   p_CE_CompileInspectionResults:
+    title: p_CE_CompileInspectionResults
+    type: object
     description: Program inspection process assigned to lead inspector for compilation of program inspection results
     properties:
       Comments:
@@ -11427,6 +11514,8 @@ definitions:
         type: number
         format: '6,0'
   p_CE_PerformReinspection:
+    title: p_CE_PerformReinspection
+    type: object
     description: Process assigned to Program Inspection lead inspector to complete a follow up inspection
     properties:
       Comments:
@@ -11454,6 +11543,8 @@ definitions:
         type: number
         format: '6,0'
   p_CE_PerformInspection:
+    title: p_CE_PerformInspection
+    type: object
     description: Process assigned to Program Inspection inspector
     properties:
       Comments:
@@ -11481,6 +11572,8 @@ definitions:
         type: number
         format: '6,0'
   p_ER_ReferralRequest:
+    title: p_ER_ReferralRequest
+    type: object
     description: Referral request
     required:
       - Referral Level
@@ -11704,6 +11797,8 @@ definitions:
       UserId:
         $ref: '#/definitions/u_Users'
   p_FN_PerformDailyClose:
+    title: p_FN_PerformDailyClose
+    type: object
     description: Common finance process that captures details of the daily reconciliation
     properties:
       STUBBED:
@@ -11713,6 +11808,8 @@ definitions:
           - find
           - this
   p_PerformReview:
+    title: p_PerformReview
+    type: object
     description: Process assigned to a plans examiner for a review on a permit application
     required:
       - Review Type
@@ -11767,6 +11864,8 @@ definitions:
         type: string
         maxLength: 4000
   p_CE_SupervisorReview:
+    title: p_CE_SupervisorReview
+    type: object
     description: Process assigned for supervisor review of an investigator's findings
     properties:
       Comments:
@@ -11786,6 +11885,8 @@ definitions:
         type: string
         maxLength: 4000
   p_LMS_PerformInvestigation:
+    title: p_LMS_PerformInvestigation
+    type: object
     description: Process assigned to code enforcement investigator to complete an investigation
     properties:
       Additional Instructions:
@@ -11845,6 +11946,8 @@ definitions:
         type: string
         maxLength: 4000
   p_AppealComplete:
+    title: p_AppealComplete
+    type: object
     description: Process assigned on a case file from a meeting item when an appeal is complete
     properties:
       Comments:
@@ -11857,6 +11960,8 @@ definitions:
         type: string
         maxLength: 4000
   u_Users:
+    title: u_Users
+    type: object
     description: LMS User
     required:
       - Email Address
