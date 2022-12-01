@@ -26,12 +26,12 @@ definitions:
     properties:
       Fee Display:
         $ref: '#/definitions/o_FN_FeeDisplay'
-      Bank/Surety Name:
+      Bank/Surety Name (BandSuretyName):
         description: The name of the Bank or Surety Institution that has granted the Bond to the Applicant.
         example: BankSuretyName
         type: string
         maxLength: 4000
-      Bank/Surety Address:
+      Bank/Surety Address (BankSuretyAddress):
         description: The mailing address of the Bank or Surety Institution that has granted the Bond to the Applicant.
         type: string
         maxLength: 4000
@@ -39,19 +39,19 @@ definitions:
           field name:
             type: string
             description: this is a test
-      Bond/Escrow Expiration Date:
+      Bond/Escrow Expiration Date (BondEscrowExpirationDate):
         description: The date that the Bond or Escrow Account will expire on.
         type: string
         format: date
-      Comments:
+      Comments (Comments):
         description: Any comments entered by staff when setting up the Bond/Escrow Account.
         type: string
         maxLength: 4000
-      Expiration/Completion/Performance Date:
+      Expiration/Completion/Performance Date (BondEscrowExiprationDate):
         description: TBD
         type: string
         format: date
-      Type:
+      Type (Type):
         description: Defines the type of Bond/Escrow that is being created in the system.
         type: string
         enum:
@@ -61,28 +61,28 @@ definitions:
           - Performance
           - Reforestation
           - Siltation & Erosion Control
-      Bond/Letter Of Credit Number:
+      Bond/Letter Of Credit Number (BondEscrowCreditNumber):
         description: 'Where the bond is not paid in cash, the jurisdiction may wish to record the Bond or Letter of Credit Number associated with the bond being created.'
         type: string
         maxLength: 10
-      Bond or Escrow:
+      Bond or Escrow (BondorEscrow):
         description: Allows the user to specify if they are creating a Bond or an Escrow job.
         type: string
         enum:
           - Bond
           - Escrow
-      Remaining Balance:
+      Remaining Balance (RemainingBalance):
         description: The balance available to the jurisdiction after all deductions and increases are factored in.
         type: number
         format: '14,0'
         example: Field Name - Remaining Balance
       Authorization Financial Profile:
         $ref: '#/definitions/o_FN_AuthFinancialProfile'
-      Bond/Escrow Credit Approval Date:
+      Bond/Escrow Credit Approval Date (BondEscrowCreditApprovalDate):
         description: Used to record the date the Bond/Escrow was approved by the jurisdiciton.
         type: string
         format: date
-      Amount:
+      Amount (Amount):
         description: The initial amount set for the Bond/Escrow when creating it.
         type: number
         format: '14,0'
