@@ -6397,7 +6397,7 @@ definitions:
     properties:
       Address Object:
         $ref: '#/definitions/o_CR_AddressableObject'
-      Effective End Date:
+      Effective End Date (EffectiveEndDate):
         description: Used to record the last date that the Address record will be considered valid.
         type: string
         format: date
