@@ -165,31 +165,31 @@ definitions:
       - Is Cloned From Master Plan
       - Number of Dwelling Units Removed
     properties:
-      Building Contract Value:
+      Building Contract Value (BuildingContractValue):
         description: This field allows the applicant to fill in the projected value of the Building Project for the applicable permit.
         type: number
-        format: '14,0'
-      Development Application:
+        format: '14,2'
+      Development Application (DevelopmentPermitExternalFileNum):
         description: 'Where a Development Approval or Permit is associated with the Building Permit, this field is used to record the permit or planning job number.'
         type: string
         maxLength: 40
-      Location Type:
+      Location Type (LocationType):
         description: Used to indicate the type of location the Building Permit will be carried out at.
         type: string
         enum:
           - Addressed
           - Non-Addressed
-      Application Document Display Options:
+      Application Document Display Options :
         description: Allows the user to swap between the different filters on the documents tab in LMS.
         type: string
         enum:
           - Hide "Not Accepted" Documents
           - Show All Documents
-      Septic Permit number:
+      Septic Permit number (SepticPermitNumber):
         description: 'If a non-LMS Septic Permit is being applied for as a part of this Building Permit, the user may use this field to record the permit number.'
         type: string
         maxLength: 30
-      Water Supply Type:
+      Water Supply Type (WaterSupplyType):
         description: Used to record the Water Supply Type at the location the Building Permit is being carried out at.
         type: string
         enum:
@@ -199,7 +199,7 @@ definitions:
           - Private Well
       Provide Information (PROC):
         $ref: '#/definitions/p_PI_ProvideFurtherInformation'
-      New Power Service:
+      New Power Service (NewPowerService):
         description: Allows the user to specify if a New Power Service will be installed as a part of the permit.
         type: boolean
       ePlans Review Feedback:
