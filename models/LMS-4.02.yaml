@@ -5,7 +5,7 @@ swagger: '2.0'
 info:
   description: LMS 3.8 and 4.0 Data Model
   version: 3.8.0
-  title: LMS Data Model
+  title: LMS 4.02 Model Update
   contact:
     name: LMS 4.02 New
     url: https://computronix.stoplight.io/studio/datadictionary?
